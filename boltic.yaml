@@ -11,7 +11,7 @@ serverlessConfig:
     PORT: "8080"
   PortMap:
     - Name: "http"
-      Port: "8080"
+      Port: 8080
       Protocol: "http"
   Scaling:
     AutoStop: false
