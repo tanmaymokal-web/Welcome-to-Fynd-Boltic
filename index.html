@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Fynd Boltic</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Fynd Boltic - AI Workflow Automation for Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
 * {
   margin: 0;
@@ -16,8 +16,6 @@
   --primary: #FF5722;
   --primary-light: #FF7043;
   --primary-dark: #E64A19;
-  --orange: #FFA726;
-  --orange-light: #FFB74D;
   --text-dark: #1a1a1a;
   --text-light: #6b7280;
   --border: #e5e7eb;
@@ -36,7 +34,6 @@ body {
   line-height: 1.6;
 }
 
-/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -52,16 +49,30 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
   text-decoration: none;
 }
 
-.nav-brand svg {
-  width: 24px;
-  height: 24px;
+.nav-brand-logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--text-dark) 0%, var(--text-dark) 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-brand-logo svg {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  fill: none;
+  stroke-width: 1.8;
 }
 
 .nav-center {
@@ -78,15 +89,6 @@ body {
   font-weight: 500;
   transition: color 0.3s;
   cursor: pointer;
-  position: relative;
-}
-
-.nav-center a::after {
-  content: '▼';
-  font-size: 0.6rem;
-  margin-left: 0.3rem;
-  opacity: 0;
-  transition: opacity 0.3s;
 }
 
 .nav-center a:hover {
@@ -103,6 +105,12 @@ body {
   width: 24px;
   height: 24px;
   cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.nav-icon:hover {
+  opacity: 1;
 }
 
 .btn-book {
@@ -143,7 +151,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hero Section */
 .hero {
   max-width: 1200px;
   margin: 0 auto;
@@ -166,9 +173,11 @@ body {
   animation: slideDown 0.6s ease-out;
 }
 
-.badge svg {
-  width: 18px;
-  height: 18px;
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
 }
 
 .hero-title {
@@ -289,7 +298,6 @@ body {
   border-color: var(--primary-dark);
 }
 
-/* Features Section */
 .features {
   max-width: 1200px;
   margin: 0 auto;
@@ -350,7 +358,6 @@ body {
   line-height: 1.6;
 }
 
-/* Use Cases Section */
 .use-cases {
   background: var(--bg-light);
   padding: 4rem 2rem;
@@ -396,7 +403,6 @@ body {
   color: var(--text-light);
 }
 
-/* Integration Section */
 .integrations {
   max-width: 1200px;
   margin: 0 auto;
@@ -442,7 +448,6 @@ body {
   font-weight: 500;
 }
 
-/* CTA Section */
 .cta {
   background: var(--bg-light);
   padding: 4rem 2rem;
@@ -474,7 +479,6 @@ body {
   justify-content: center;
 }
 
-/* Footer */
 .footer {
   background: var(--text-dark);
   color: white;
@@ -513,7 +517,6 @@ body {
   font-size: 0.85rem;
 }
 
-/* Animations */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -534,7 +537,6 @@ body {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .nav-center {
     display: none;
@@ -571,6 +573,20 @@ body {
     width: 100%;
     justify-content: center;
   }
+
+  .nav-brand {
+    font-size: 1rem;
+  }
+
+  .nav-brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-brand-logo svg {
+    width: 22px;
+    height: 22px;
+  }
 }
   </style>
 </head>
@@ -578,9 +594,14 @@ body {
   <!-- Navigation -->
   <nav class="navbar">
     <a href="#" class="nav-brand">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
-      </svg>
+      <div class="nav-brand-logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- Heart shape with nested square -->
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          <!-- Inner square -->
+          <rect x="8" y="7" width="8" height="8" rx="1"/>
+        </svg>
+      </div>
       Fynd Boltic
     </a>
 
@@ -605,9 +626,7 @@ body {
   <!-- Hero Section -->
   <section class="hero">
     <div class="badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11z"/>
-      </svg>
+      <div class="badge-dot"></div>
       New
     </div>
 
