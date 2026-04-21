@@ -1,24 +1,22 @@
-app: "anujbugtest"
+app: "fynd-boltic-landing"
 serverlessId: "ce200692-ad45-4edd-b63b-f052f7ce51bb"
 region: "asia-south1"
-handler: "handler.handler"
-language: "nodejs/20"
+handler: "app.js"
+language: "nodejs/18"
 
 serverlessConfig:
-  Name: "anujbugtest"
-  Description: ""
-  Runtime: "git"
+  Name: "Fynd Boltic Landing Page"
+  Description: "Professional AI Workflow Automation landing page"
+  Runtime: "docker"
   # Environment variables for your serverless function
-  # To add env variables, replace {} with key-value pairs like:
-  # Env:
-  #   API_KEY: "your-api-key"
-  #TO add port map, replace {} with port map like:
-  # PortMap:
-  #   - Name: "port"
-  #     Port: "8080"
-  #     Protocol: "http"/"https"
-  Env: {}
-  PortMap: {}
+  Env:
+    NODE_ENV: "production"
+    PORT: "8080"
+  # Port mapping for HTTP access
+  PortMap:
+    - Name: "http"
+      Port: "8080"
+      Protocol: "http"
   Scaling:
     AutoStop: false
     Min: 1
@@ -26,8 +24,8 @@ serverlessConfig:
     MaxIdleTime: 300
   Resources:
     CPU: 0.1
-    MemoryMB: 128
-    MemoryMaxMB: 128
+    MemoryMB: 256
+    MemoryMaxMB: 512
   Timeout: 60
   Validations: null
 

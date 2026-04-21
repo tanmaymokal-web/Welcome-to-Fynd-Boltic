@@ -1,12 +1,16 @@
 {
-  "name": "fynd-boltic-welcome",
-  "version": "2.0.0",
-  "description": "A fancy, modern welcome page for Fynd Boltic with smooth animations and responsive design",
+  "name": "fynd-boltic-landing",
+  "version": "3.0.0",
+  "description": "Professional AI Workflow Automation landing page for Fynd Boltic",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["fynd", "boltic", "welcome", "landing-page"],
-  "author": "Fynd Boltic Team",
-  "license": "MIT"
+  "keywords": ["fynd", "boltic", "landing-page", "ai", "automation", "finance"],
+  "author": "Fynd Boltic",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
